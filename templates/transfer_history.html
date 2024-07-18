@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transferlar tarixi</title>
+</head>
+<body>
+    <h1>Transferlar tarixi</h1>
+    <form method="POST">
+        Muddat:
+        <select name="period">
+            <option value="day">Kun</option>
+            <option value="week">Hafta</option>
+            <option value="month">Oy</option>
+        </select><br>
+        <input type="submit" value="Ko'rsatish">
+    </form>
+    {% if history %}
+        <ul>
+        {% for t in history %}
+            <li>{{ t.timestamp }}: {{ t.amount }} to {{ t.to_user.username }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    <a href="/user_menu">Orqaga</a>
+</body>
+</html>

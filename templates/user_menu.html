@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Foydalanuvchi menyusi</title>
+</head>
+<body>
+    <h1>Xush kelibsiz, {{ session['user'] }}</h1>
+    <p>Balans: {{ balance }}</p>
+    <a href="/add_balance">Balansni to'ldirish</a><br>
+    <a href="/transfer_money">Pul o'tkazish</a><br>
+    <a href="/transfer_history">Transferlar tarixi</a><br>
+    <form method="POST" action="/delete_account">
+        <input type="submit" value="Accountni o'chirish">
+    </form>
+    <a href="/logout">Chiqish</a>
+</body>
+</html>
